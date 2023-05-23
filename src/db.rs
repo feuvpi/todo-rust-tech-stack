@@ -109,4 +109,13 @@ impl DB {
 
         Ok(AffectedRows { rows_affected: 1 })
     }
+
+    pub async fn delete_task(&self, id: String) -> Result<AffectedRows, crate::error::Error> {
+        let sql = "Delete $th";
+        let tid = format!("{}", id);
+        let vars: BTreeMap<String, Value> = map!["th".into() => thing(&tid)?.into()];
+        let _ = self.execute(sql, Some(vars)).await?;
+
+        Ok(AffectedRows { rows_affected: 1 })
+    }
 }
