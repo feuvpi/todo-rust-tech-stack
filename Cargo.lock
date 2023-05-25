@@ -6,6 +6,7 @@ version = 3
 name = "api_todo"
 version = "0.1.0"
 dependencies = [
+ "cors",
  "rocket",
  "tokio",
 ]
@@ -101,6 +102,12 @@ dependencies = [
  "time",
  "version_check",
 ]
+
+[[package]]
+name = "cors"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9d2dacfa7c8e6a88bacdbd500047e86ac32f67a3706d5b55a1d7b36c80efbc2f"
 
 [[package]]
 name = "devise"
